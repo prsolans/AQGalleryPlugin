@@ -1,6 +1,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<link href="/gettys/wp-content/plugins/aqdct-gallery/bootstrap.css" rel="stylesheet">
-<script src="/gettys/wp-content/plugins/aqdct-gallery/bootstrap.js"></script>
+<link href="/gettys/wp-content/plugins/aqdct-gallery/css/bootstrap.css" rel="stylesheet">
+<script src="/gettys/wp-content/plugins/aqdct-gallery/js/bootstrap.js"></script>
 
 <style>
 .row {

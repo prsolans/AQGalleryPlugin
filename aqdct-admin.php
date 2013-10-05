@@ -1,12 +1,34 @@
     <div class='row'>
       <div class="span5">  
         <p class='lead'>Add a new gallery:</p>
-
+        <form class="form-horizontal" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+  <input type='hidden' name='aqgallery_update' value='true'/>
+  <div class="control-group">
+    <label class="control-label" for="name">Name</label>
+    <div class="controls">
+    <input type="text" name="aqgallery_name" value="">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="description">Description</label>
+    <div class="controls">
+    <textarea name="aqgallery_description" rows="6" cols="40"></textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" id="live"> Live
+      </label>
+        <button type='submit' class='btn btn-primary large'>Add new gallery</button>
+    </div>
+  </div>
+</form>
       </div>
-      <div class='span7'>  
+      <div class='span6 offset1'>  
       <p class='lead'>Select an existing gallery to edit:</p>
-      <table class='table' style='width: 800px'>
-        <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+      <table class='table' style='width: 700px'>
+        <tr><th>Name</th><th>Actions</th></tr>
       <?php 
        global $wpdb;
           $table = $wpdb->prefix."aqdct_gallery";
@@ -16,8 +38,7 @@
       foreach($results as $result)
       {
           echo "<tr><td>";
-          echo $result->name."</td><td>";
-          echo $result->description."</td><td><a href='admin.php?page=aqgallery_edit&id=".$result->id."'>Edit</a> | <a href=''>Delete</a></td></tr>";
+          echo $result->name."</td><td><a href='admin.php?page=aqgallery_edit&id=".$result->id."'>Edit</a> | <a href=''>Delete</a></td></tr>";
       }
       ?>
       </table>
