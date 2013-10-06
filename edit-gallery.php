@@ -53,6 +53,15 @@
   </div>
 </form>
 
+<?php elseif(isset($_GET['flag'])): ?>
+<form class="form-horizontal" method="post" action="admin.php?page=aqgallery">
+  <input type='hidden' name='aqgallery_delete' value='true'/>
+  <input type='hidden' name='aqgallery_id' value='<?=$id?>'/>
+
+Are you sure you want to delete this gallery? All images will still be in the media library, but the gallery will no longer exist.
+<br/>
+      <button type="submit" class="btn btn-danger">Delete</button>
+</form>
 <?php else: ?>
 
 <form class="form-horizontal" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
